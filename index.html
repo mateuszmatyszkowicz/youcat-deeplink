@@ -12,7 +12,7 @@
   <script>(function(){
 
     // For desktop browser, remember to pass though any metadata on the link for deep linking
-    var fallbackLink = 'http://example.com/my-web-app/'+window.location.search+window.location.hash;
+    var fallbackLink = 'htts://youcat.org'+window.location.search+window.location.hash;
 
 
     // Simple device detection
@@ -23,14 +23,14 @@
     if (isiOS || isAndroid) {
       // Load our custom protocol in the iframe, for Chrome and Opera this burys the error dialog (which is actually HTML)
       // for iOS we will get a popup error if this protocol is not supported, but it won't block javascript
-      document.getElementById('loader').src = 'custom-protocol://my-app'+window.location.search+window.location.hash;
+      document.getElementById('loader').src = 'linkedin://in/matyszkowicz/'+window.location.search+window.location.hash;
 
       // The fallback link for Android needs to be https:// rather than market:// or the device will try to 
       // load both URLs and only the last one will win. (Especially FireFox, where an "Are You Sure" dialog will appear)
       // on iOS we can link directly to the App Store as our app switch will fire prior to the switch
       // If you have a mobile web app, your fallback could be that instead. 
-      fallbackLink = isAndroid ? 'https://play.google.com/store/apps/details?id=com.mycompany.myapp' :
-                                 'itms-apps://itunes.apple.com/app/my-app/idxxxxxxxx?mt=8' ;
+      fallbackLink = isAndroid ? 'https://play.google.com/store/apps/details?id=com.linkedin.android' :
+                                 'https://apps.apple.com/pl/app/linkedin-network-job-finder/id288429040?l=pl' ;
     }
 
     // Now we just wait for everything to execute, if the user is redirected to your custom app
