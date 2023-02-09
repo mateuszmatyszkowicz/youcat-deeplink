@@ -7,9 +7,9 @@
 <body>
 
   <!-- iframe used for attempting to load a custom protocol -->
-  <iframe style="display:none" height="0" width="0" id="loader" sandbox="allow-popups allow-popups-to-escape-sandbox">
+  <iframe style="display:none" height="0" width="0" id="loader" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-to-custom-protocols">
   <script>
-    window.location.replace('linkedin://')
+    window.location.replace('custom-protocols://linkedin')
     </script></iframe>
 
   <script>(function(){
@@ -26,7 +26,7 @@
 //     if (isiOS || isAndroid) {
       // Load our custom protocol in the iframe, for Chrome and Opera this burys the error dialog (which is actually HTML)
       // for iOS we will get a popup error if this protocol is not supported, but it won't block javascript
-      document.getElementById('loader').src = 'https://youcat.org'+window.location.search+window.location.hash;
+      document.getElementById('loader').src = 'custom-protocol://linkedin'+window.location.search+window.location.hash;
 
       // The fallback link for Android needs to be https:// rather than market:// or the device will try to 
       // load both URLs and only the last one will win. (Especially FireFox, where an "Are You Sure" dialog will appear)
