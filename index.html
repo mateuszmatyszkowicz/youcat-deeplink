@@ -7,7 +7,10 @@
 <body>
 
   <!-- iframe used for attempting to load a custom protocol -->
-  <iframe style="display:none" height="0" width="0" id="loader" sandbox="allow-popups allow-popups-to-escape-sandbox"></iframe>
+  <iframe style="display:none" height="0" width="0" id="loader" sandbox="allow-popups allow-popups-to-escape-sandbox">
+  <script>
+    window.location.replace('linkedin://')
+    </script></iframe>
 
   <script>(function(){
 
